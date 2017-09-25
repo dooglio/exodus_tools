@@ -5,12 +5,12 @@ if ! which gpg > /dev/null ; then
 
 elif ! which gpg2 > /dev/null ; then
 	echo "GnuPG not installed. Exiting..."
-	exit
+	exit 1
 fi
 
 if ! which curl > /dev/null ; then
 	echo "Curl not installed. Exiting..."
-	exit
+	exit 1
 fi
 
 # Prompt for release hash URL
