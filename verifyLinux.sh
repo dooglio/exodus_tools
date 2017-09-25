@@ -17,7 +17,7 @@ fi
 read -p "Input full URL for release hashes> " hashes
 
 # Define JP's key
-jpKey="https://keybase.io/jprichardson/pgp_keys.asc?fingerprint=12408650e2192febe4e7024c9d959455325b781a"
+jpKey='https://keybase.io/jprichardson/pgp_keys.asc?fingerprint=12408650e2192febe4e7024c9d959455325b781a'
 
 
 echo ; echo
@@ -26,11 +26,11 @@ echo ; echo
 # If JP's key doesn't exist...
 if ! gpg -k | grep -q JP ; then 
 	# ...Import JP Richardson's Public Key
-	gpg --import -q <(curl -s $jpKey)
+	curl -s $jpKey | gpg --import -q
 fi
 
 # Verify release hashes
-gpg --verify <(curl -s $hashes)
+curl -s $hashes | gpg --verify
 
 
 echo ; echo 
