@@ -5,7 +5,7 @@ while true ; do
 # Check the current date. If it's the 28th of the month, exit the loop and continue. 
 until date +%d | grep -q 28 ; do
 	today=`date`
-	echo "$today - Another day of not dying..."
+	echo "$today - Not the 28th yet..."
 	sleep 86400
 done
 
@@ -35,5 +35,9 @@ if ! [ "$month" == "$willCookie" ] ; then
 	sleep 10000
 
 fi
+
+# If the user HAS checked in, he's alive. Keep calm and carry on!
+echo "Another month successfully alive!"
+sleep 86400
 
 done
