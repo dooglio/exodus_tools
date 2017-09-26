@@ -1,0 +1,21 @@
+#!/bin/bash
+
+until date +%d | grep -q 28 ; do
+	today=`date`
+	echo "$today - Another day of not dying..."
+	sleep 86400
+done
+
+month=`date +%m`
+
+willCookie=`stat -c %y /root/.will | grep -o "\-[0-9][0-9]-" | grep -o [0-9][0-9]`
+
+if ! [ "$month" == "$willCookie" ] ; then
+
+	data=`eval cat /root/.will`
+	
+	curl -X POST -H 'Content-type: application/json' --data "{'text':'$data'}" https://hooks.slack.com/services/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 ; echo
+	
+	curl -X POST -H 'Content-type: application/json' --data "{'text':'$data'}" https://hooks.slack.com/services/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 ; echo
+	
+fi
