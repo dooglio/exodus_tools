@@ -1,0 +1,72 @@
+#!/bin/bash
+
+tempfile='/tmp/enscript.bufferfile' 
+
+## to clean temp file in case of interruption
+
+	cleanUp () {
+		rm $tempfile
+	}
+
+	trap cleanUp SIGHUP SIGINT SIGTERM
+##
+
+printUsage () {
+echo '
+Usage: 
+	enscript -[oed] filename
+'
+}
+
+
+if [ -z $1 ] ; then
+
+	printUsage
+	rm -f $tempfile
+
+	exit
+
+
+else
+	while getopts o:e:d: option ; do
+		foundOpt='yes'
+		case $option in
+
+			o) 
+				# Open file
+				gpg2 -d $OPTARG | vim - "+w $tempfile"
+				cat $tempfile | gpg2 -r $gpg_key --armor -o - -e | cat > $OPTARG
+				rm -f $tempfile 
+				echo -e "\nSaved to $OPTARG"
+				exit ;;
+
+			e)
+				# Encrypt file
+				gpg2 -r $gpg_key --armor -o $OPTARG.encrypted -e $OPTARG ;;
+
+			d)
+				# Decrypt file
+				gpg2 -q -o $tempfile -d $OPTARG
+				read -n 1 -p "Are you sure you want to decrypt this file? (y/n)" confirm
+				if [[ $confirm == 'y' ]] ; then
+					cat $tempfile > $OPTARG.decrypted ; echo "
+Output to $OPTARG.decrypted"
+					rm -f $tempfile
+				else 
+					rm -f $tempfile
+				fi	;;
+			*)
+				printUsage ;;
+
+		esac
+
+	done
+	#if no options are found, decrypt and execute the given file, which is assumed to be a bash script.
+	if [[ $foundOpt != yes ]] ; then
+		gpg2 -qo $tempfile -d $1	
+		bash $tempfile
+		rm -f $tempfile
+	fi
+fi
+
+rm -f $tempfile
