@@ -2,6 +2,8 @@
 
 tempfile='/tmp/enscript.bufferfile' 
 
+gpg_key="YOUR PUBKEY's UID HERE"
+
 ## to clean temp file in case of interruption
 
 	cleanUp () {
