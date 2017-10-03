@@ -58,7 +58,11 @@ elif 'Linux' in platform.system():
             elif os.path.isfile(answer):
                 executable = answer
         else:
-            executable = EXODUSPROG
+            executable = os.environ['EXODUSPROG']
+            if os.path.isdir(executable):
+                if executable[-1] != "/":
+                    executable += "/"
+                executable = executable + "Exodus"
         # Check if the file is actually executable
         if not os.access(executable, os.X_OK):
             print("Supplied file is not an executable. Exiting...")
