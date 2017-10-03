@@ -2,7 +2,7 @@
 
 import os
 import sys
-
+import platform
 
 def interactive(prompt):
     return raw_input(prompt)
@@ -32,7 +32,7 @@ if not os.path.isdir(directory):
         sys.exit(1)
         
 # If running Mac OS:
-if os.system("[[ $(uname -s) == Darwin ]]") == 0:
+if 'Darwin' in platform.system():
     # Check if Exodus is installed
     if not os.access("/Applications/Exodus.app/Contents/MacOS/Exodus", os.X_OK):
         print("Exodus is not installed in /Applications/ Folder. Exiting...")
@@ -41,7 +41,7 @@ if os.system("[[ $(uname -s) == Darwin ]]") == 0:
     os.system("/Applications/Exodus.app/Contents/MacOS/Exodus --datadir " + directory)
         
 # If running Linux:
-elif os.system("[[ $(uname -s) == Linux ]]") == 0:
+elif 'Linux' in platform.system():
     try:
         # To specify the default Exodus program executable location, add this line to your ~/.bashrc file:
         # export EXODUSPROG="/PATH/TO/EXODUS/EXECUTABLE"
