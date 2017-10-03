@@ -35,7 +35,7 @@ run constantly in the background on a LINUX server. I use the /etc/init.d/ folde
 
 ## enscript
 A program made for use with GPG based encryption of bash scripts that might contain sensitive data. You can use the 
-various options to open & edit, `-o` encrypt a file quickly, `-e` decrypt a file, `-d` or execute the enscripted script.
+various options to open & edit, `-o` encrypt a file quickly, `-e` decrypt a file, `-d` or execute the enscripted script (No options).
 
 ## exodir.py
 A python program that will allow Mac and Linux users of Exodus to run multiple wallets with different seeds. Run straight from 
