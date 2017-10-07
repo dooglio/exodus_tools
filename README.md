@@ -2,6 +2,9 @@
 This respository is my personal collection of various simple, portable scripts and tools for crypto-wallets, key 
 manipulations, etc. Unless otherwise noted, all these are written by me, and can be used, copied, and distributed freely.
 
+## addrgen.py
+Credit goes to github user 'weex' for this handy, portable tool. Quickly generates random Bitcoin public/private keypairs entirely offline. _Has to be run on linux - Mac is missing some libraries that I couldn't get to work._
+
 ## BIP39
 This tool is from https://github.com/iancoleman/bip39 full credit to iancoleman for making this fantastic 
 tool! Should be downloaded and used offline for security. Supports the generation of, and derivation from, 
