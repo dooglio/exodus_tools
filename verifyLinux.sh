@@ -24,7 +24,7 @@ echo ; echo
 
 
 # If JP's key doesn't exist...
-if ! gpg -k | grep -q JP ; then 
+if ! gpg -k --with-fingerprint | grep -q "1240 8650 E219 2FEB E4E7  024C 9D95 9455 325B 781A" ; then 
 	# ...Import JP Richardson's Public Key
 	curl -s $jpKey | gpg --import -q
 fi
