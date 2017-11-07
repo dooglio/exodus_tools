@@ -1,0 +1,2 @@
+Exodus.debug.setEthAddress('address')
+flux.actions.accounts.setHDKeyFromXPub('bitcoin', 'xpub')
