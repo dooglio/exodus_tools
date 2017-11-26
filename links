@@ -141,7 +141,14 @@ slack) https://exodus-invite.herokuapp.com/
 backup) https://vimeo.com/176811304
 
 exit|quit|q) Exit command prompt
+
+updatelinks) Updates the program with the newest version
 "
+			;;
+		updatelinks)
+			curl -o /usr/local/bin/links https://raw.githubusercontent.com/kklash/exodus_tools/master/links
+			chmod +x /usr/local/bin/links
+			exit 0
 			;;
 
 		exit|quit|q)
