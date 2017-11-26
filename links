@@ -43,7 +43,7 @@ while true ; do
 		start|starting|getstarted)
 			printf 'http://support.exodus.io/article/37-how-do-i-get-started-with-exodus' | pbcopy
 			;;
-		12restore)
+		12restore|12)
 			printf 'http://support.exodus.io/article/42-how-do-i-restore-from-my-12-word-phrase' | pbcopy
 			;;
 		restore)
@@ -84,7 +84,62 @@ while true ; do
 			;;
 
 
+		help)
+			echo "	Commands (Pipes indicate multiple shortcut options) :
 
+
+audit) http://support.exodus.io/article/74-how-do-i-audit-my-deposits-and-withdrawals
+
+txid|tx) http://support.exodus.io/article/48-how-do-i-find-a-transaction-id
+
+pricing|price|feed) http://support.exodus.io/article/60-can-i-change-the-exodus-pricing-feeds
+
+monitor|surveil) http://support.exodus.io/article/138-can-exodus-staff-monitor-my-account-my-transaction-history
+
+enable) http://support.exodus.io/article/101-how-do-i-enable-more-assets-in-exodus
+
+missent|sent) http://support.exodus.io/article/156-ive-sent-bitcoin-cash-to-my-bitcoin-address
+
+order|orderid|shapeshift|ss) http://support.exodus.io/article/50-how-do-i-find-the-shapeshift-order-id
+
+developer|dev) http://support.exodus.io/article/79-how-do-i-open-the-developer-menu
+
+change) http://support.exodus.io/article/109-what-are-bitcoin-change-addresses
+
+priv|privkey) http://support.exodus.io/article/148-what-are-private-keys
+
+replay) http://support.exodus.io/article/168-what-is-a-replay-attack
+
+downgrade) https://exodusbin.azureedge.net/releases/exodus-windows-x64-1.35.5.exe
+
+start|starting|getstarted) http://support.exodus.io/article/37-how-do-i-get-started-with-exodus
+
+12restore|12) http://support.exodus.io/article/42-how-do-i-restore-from-my-12-word-phrase
+
+restore) http://support.exodus.io/article/39-how-do-i-restore-from-backup
+
+refresh) http://support.exodus.io/article/75-how-do-i-refresh-my-wallet
+
+delete) http://support.exodus.io/article/80-how-do-i-delete-my-wallet-and-start-over
+
+fees) http://support.exodus.io/article/68-does-exodus-have-fees-to-send-or-receive
+
+import) http://support.exodus.io/article/87-can-i-import-a-private-key
+
+export) http://support.exodus.io/article/86-how-can-i-view-my-private-keys
+
+xpub) http://support.exodus.io/article/112-how-to-export-your-bitcoin-xpub-key
+
+roadmap|map) http://support.exodus.io/article/96-exodus-wallet-roadmap
+
+screen|screenshot) http://support.exodus.io/article/169-how-to-take-a-screenshot
+
+upgrade|update) http://support.exodus.io/article/27-how-do-i-upgrade-exodus
+
+slack) https://exodus-invite.herokuapp.com/
+
+backup) https://vimeo.com/176811304"
+			;;
 		*)
 			echo 'Invalid command'
 			;;
