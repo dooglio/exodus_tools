@@ -138,7 +138,14 @@ upgrade|update) http://support.exodus.io/article/27-how-do-i-upgrade-exodus
 
 slack) https://exodus-invite.herokuapp.com/
 
-backup) https://vimeo.com/176811304"
+backup) https://vimeo.com/176811304
+
+exit|quit|q) Exit command prompt
+"
+			;;
+
+		exit|quit|q)
+			exit 0
 			;;
 		*)
 			echo 'Invalid command'
