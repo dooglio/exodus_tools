@@ -1,5 +1,13 @@
 #!/bin/bash
 
+if ! [[ -f /usr/bin/pbcopy ]] ; then
+	if ! which xclip > /dev/null ; then
+		sudo apt install xclip -y
+	fi
+	alias pbcopy='xclip -selection clipboard'
+fi
+
+
 while true ; do
 
 	read -p "> " cmd
