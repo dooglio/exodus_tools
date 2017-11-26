@@ -1,10 +1,13 @@
 #!/bin/bash
 
-if ! [[ -f /usr/bin/pbcopy ]] ; then
-	if ! which xclip > /dev/null ; then
-		sudo apt install xclip -y
-	fi
-	alias pbcopy='xclip -selection clipboard'
+sysname=$(uname -s)
+
+if [ "$sysname" == "Linux" ]
+then
+    # pbcopy is a Mac OS/X command, but under Linux we use xclip
+    function pbcopy {
+        xclip -selection clipboard
+    }
 fi
 
 
