@@ -1,0 +1,96 @@
+#!/bin/bash
+
+while true ; do
+
+	read -p "> " cmd
+	case $cmd in
+		audit)
+			printf 'http://support.exodus.io/article/74-how-do-i-audit-my-deposits-and-withdrawals' | pbcopy
+			;;
+		txid|tx)
+			printf 'http://support.exodus.io/article/48-how-do-i-find-a-transaction-id' | pbcopy
+			;;
+		pricing|price|feed)
+			printf 'http://support.exodus.io/article/60-can-i-change-the-exodus-pricing-feeds' | pbcopy
+			;;
+		monitor|surveil)
+			printf 'http://support.exodus.io/article/138-can-exodus-staff-monitor-my-account-my-transaction-history' | pbcopy
+			;;
+	 	enable)
+			printf 'http://support.exodus.io/article/101-how-do-i-enable-more-assets-in-exodus' | pbcopy
+			;;
+		missent|sent)
+			printf 'http://support.exodus.io/article/156-ive-sent-bitcoin-cash-to-my-bitcoin-address' | pbcopy
+			;;
+		order|orderid|shapeshift|ss)
+			printf 'http://support.exodus.io/article/50-how-do-i-find-the-shapeshift-order-id' | pbcopy
+			;;
+		developer|dev)
+			printf 'http://support.exodus.io/article/79-how-do-i-open-the-developer-menu' | pbcopy
+			;;
+		change)
+			printf 'http://support.exodus.io/article/109-what-are-bitcoin-change-addresses' | pbcopy
+			;;
+		priv|privkey)
+			printf 'http://support.exodus.io/article/148-what-are-private-keys' | pbcopy
+			;;
+		replay)
+			printf 'http://support.exodus.io/article/168-what-is-a-replay-attack' | pbcopy
+			;;
+		downgrade)
+			printf 'https://exodusbin.azureedge.net/releases/exodus-windows-x64-1.35.5.exe' | pbcopy
+			;;
+		start|starting|getstarted)
+			printf 'http://support.exodus.io/article/37-how-do-i-get-started-with-exodus' | pbcopy
+			;;
+		12restore)
+			printf 'http://support.exodus.io/article/42-how-do-i-restore-from-my-12-word-phrase' | pbcopy
+			;;
+		restore)
+			printf 'http://support.exodus.io/article/39-how-do-i-restore-from-backup' | pbcopy
+			;;
+		refresh)
+			printf 'http://support.exodus.io/article/75-how-do-i-refresh-my-wallet' | pbcopy
+			;;
+		delete)
+			printf 'http://support.exodus.io/article/80-how-do-i-delete-my-wallet-and-start-over' | pbcopy
+			;;
+		fees)
+			printf 'http://support.exodus.io/article/68-does-exodus-have-fees-to-send-or-receive' | pbcopy
+			;;
+		import)
+			printf 'http://support.exodus.io/article/87-can-i-import-a-private-key' | pbcopy
+			;;
+		export)
+			printf 'http://support.exodus.io/article/86-how-can-i-view-my-private-keys' | pbcopy
+			;;
+		xpub)
+			printf 'http://support.exodus.io/article/112-how-to-export-your-bitcoin-xpub-key' | pbcopy
+			;;
+		roadmap|map)
+		    printf 'http://support.exodus.io/article/96-exodus-wallet-roadmap' | pbcopy
+		    ;;
+		screen|screenshot)
+		    printf 'http://support.exodus.io/article/169-how-to-take-a-screenshot' | pbcopy
+		    ;;
+		upgrade|update)
+			printf 'http://support.exodus.io/article/27-how-do-i-upgrade-exodus' | pbcopy
+			;;
+		slack)
+			printf 'https://exodus-invite.herokuapp.com/' | pbcopy
+			;;
+		backup)
+			printf 'https://vimeo.com/176811304' | pbcopy
+			;;
+
+
+
+		*)
+			echo 'Invalid command'
+			;;
+
+		esac
+
+
+
+done
