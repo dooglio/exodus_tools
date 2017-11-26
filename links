@@ -1,9 +1,7 @@
 #!/bin/bash
 
-sysname=$(uname -s)
 
-if [ "$sysname" == "Linux" ]
-then
+if [[ $(uname -s) == "Linux" ]] ; then
     # pbcopy is a Mac OS/X command, but under Linux we use xclip
     function pbcopy {
         xclip -selection clipboard
